@@ -47,8 +47,20 @@ aws iam create-policy \
     --policy-document file://iam_policy.json
 ```
 
+![3](https://github.com/Jyothidk/deploying-e-commerce-application-on-eks/assets/127189060/4394ee95-9bfe-4336-bb37-3453ee79039b)
 
+Create IAM Role
 
+```
+eksctl create iamserviceaccount \
+  --cluster=demo-cluster-eks-robot-shop \
+  --namespace=kube-system \
+  --name=aws-load-balancer-controller \
+  --role-name AmazonEKSLoadBalancerControllerRole \
+  --attach-policy-arn=arn:aws:iam::<your-aws-account-id>:policy/AWSLoadBalancerControllerIAMPolicy \
+  --approve
+```
+![y](https://github.com/Jyothidk/deploying-e-commerce-application-on-eks/assets/127189060/7dd1ef92-53c2-41cb-868e-a159451e2e0d)
 
 
 
