@@ -12,3 +12,26 @@ eksctl create cluster --name demo-cluster-eks-robot-shop --region us-west-1
 
 ![1](https://github.com/Jyothidk/deploying-e-commerce-application-on-eks/assets/127189060/084ff486-6f8b-4f94-b15e-085623384bb5)
 
+## Configure IAM OIDC provider
+
+```
+export cluster_name=demo-cluster-eks-robot-shop
+```
+```
+oidc_id=$(aws eks describe-cluster --name $cluster_name --query "cluster.identity.oidc.issuer" --output text | cut -d '/' -f 5) 
+```
+Check if there is an IAM OIDC provider configured already
+```
+aws iam list-open-id-connect-providers | grep $oidc_id | cut -d "/" -f4
+```
+If not, run the below command
+```
+eksctl utils associate-iam-oidc-provider --cluster $cluster_name --approve
+```
+
+
+
+
+
+
+
