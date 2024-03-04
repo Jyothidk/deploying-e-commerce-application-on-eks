@@ -146,4 +146,5 @@ Now open the address on the browser
 
 ![14](https://github.com/Jyothidk/deploying-e-commerce-application-on-eks/assets/127189060/1601f993-0d28-4ef5-b60f-435e9b49baf2)
 
+![15](https://github.com/Jyothidk/deploying-e-commerce-application-on-eks/assets/127189060/5f08877f-7bc4-4cc2-b881-872500b80a9e)
 
