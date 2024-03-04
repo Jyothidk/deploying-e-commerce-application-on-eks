@@ -29,6 +29,9 @@ If not, run the below command
 eksctl utils associate-iam-oidc-provider --cluster $cluster_name --approve
 ```
 
+![2](https://github.com/Jyothidk/deploying-e-commerce-application-on-eks/assets/127189060/40e2cfe3-0eac-4b0e-826b-58665507e1cd)
+
+
 
 
 
