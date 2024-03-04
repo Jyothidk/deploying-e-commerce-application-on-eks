@@ -117,9 +117,10 @@ eksctl create iamserviceaccount \
 Add CSI driver addon
 
 ```
-eksctl create addon --name aws-ebs-csi-driver --cluster demo-cluster-eks-robot-shop --service-account-role-arn arn:aws:iam::381492102337:role/AmazonEKS_EBS_CSI_DriverRole --force
+eksctl create addon --name aws-ebs-csi-driver --cluster demo-cluster-eks-robot-shop --service-account-role-arn arn:aws:iam::<AWS-ACCOUNT-ID>:role/AmazonEKS_EBS_CSI_DriverRole --force
 ```
 
+![6](https://github.com/Jyothidk/deploying-e-commerce-application-on-eks/assets/127189060/12e70e37-aac4-449f-b51a-7788fdc1de48)
 
 
 
