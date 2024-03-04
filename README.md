@@ -122,11 +122,28 @@ eksctl create addon --name aws-ebs-csi-driver --cluster demo-cluster-eks-robot-s
 
 ![6](https://github.com/Jyothidk/deploying-e-commerce-application-on-eks/assets/127189060/12e70e37-aac4-449f-b51a-7788fdc1de48)
 
+Now Deploy the kubernetes manifests using helm charts. This will deploy all the microservices pods under robot-shop namespace.
 
+Helm v3.x
+```
+$ kubectl create ns robot-shop
+$ helm install robot-shop --namespace robot-shop .
+```
 
+![7](https://github.com/Jyothidk/deploying-e-commerce-application-on-eks/assets/127189060/310102a7-6675-4425-a0f5-f815a2fc3834)
 
+![8](https://github.com/Jyothidk/deploying-e-commerce-application-on-eks/assets/127189060/c1f2e262-9e65-49fd-bd4a-9ecb79982b62)
 
+![9](https://github.com/Jyothidk/deploying-e-commerce-application-on-eks/assets/127189060/a4620b83-fb6e-4a70-bf66-37654a5ca2d6)
 
+Now Deploy the Ingress Resource and check the Ingress, it should be updated with address & this adress should be same as ALB DNS
 
+![11](https://github.com/Jyothidk/deploying-e-commerce-application-on-eks/assets/127189060/dad5b3df-bf0a-4f52-a49d-75943661ab10)
+
+![17](https://github.com/Jyothidk/deploying-e-commerce-application-on-eks/assets/127189060/00df53b9-627a-45a3-8cc9-bc6166ac0879)
+
+Now open the address on the browser
+
+![14](https://github.com/Jyothidk/deploying-e-commerce-application-on-eks/assets/127189060/1601f993-0d28-4ef5-b60f-435e9b49baf2)
 
 
