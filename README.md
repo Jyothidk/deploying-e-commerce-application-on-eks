@@ -31,6 +31,22 @@ eksctl utils associate-iam-oidc-provider --cluster $cluster_name --approve
 
 ![2](https://github.com/Jyothidk/deploying-e-commerce-application-on-eks/assets/127189060/40e2cfe3-0eac-4b0e-826b-58665507e1cd)
 
+## How to setup alb add on
+
+Download IAM policy
+
+```
+curl -O https://raw.githubusercontent.com/kubernetes-sigs/aws-load-balancer-controller/v2.5.4/docs/install/iam_policy.json
+```
+
+Create IAM Policy
+
+```
+aws iam create-policy \
+    --policy-name AWSLoadBalancerControllerIAMPolicy \
+    --policy-document file://iam_policy.json
+```
+
 
 
 
