@@ -63,6 +63,44 @@ eksctl create iamserviceaccount \
 ![y](https://github.com/Jyothidk/deploying-e-commerce-application-on-eks/assets/127189060/7dd1ef92-53c2-41cb-868e-a159451e2e0d)
 
 
+## Deploy ALB controller
+
+Add helm repo
+
+```
+helm repo add eks https://aws.github.io/eks-charts
+```
+
+Update the repo
+
+```
+helm repo update eks
+```
+
+Install
+
+```
+helm install aws-load-balancer-controller eks/aws-load-balancer-controller \            
+  -n kube-system \
+  --set clusterName=demo-cluster-eks-robot-shop \
+  --set serviceAccount.create=false \
+  --set serviceAccount.name=aws-load-balancer-controller \
+  --set region=us-west-1 \
+  --set vpcId=vpc-0c49b1db8c0b44b8c
+```
+
+Verify that the deployments are running.
+
+```
+kubectl get deployment -n kube-system aws-load-balancer-controller
+```
+
+![5](https://github.com/Jyothidk/deploying-e-commerce-application-on-eks/assets/127189060/e4642e08-419b-457e-bed8-efbe1e411ee2)
+
+
+
+
+
 
 
 
