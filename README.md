@@ -98,6 +98,31 @@ kubectl get deployment -n kube-system aws-load-balancer-controller
 ![5](https://github.com/Jyothidk/deploying-e-commerce-application-on-eks/assets/127189060/e4642e08-419b-457e-bed8-efbe1e411ee2)
 
 
+## EBS CSI Plugin configuration
+
+The Amazon EBS CSI plugin requires IAM permissions to make calls to AWS APIs on your behalf.
+
+Create an IAM role and attach a policy. AWS maintains an AWS managed policy or you can create your own custom policy. You can create an IAM role and attach the AWS managed policy with the following command. Replace my-cluster with the name of your cluster. The command deploys an AWS CloudFormation stack that creates an IAM role and attaches the IAM policy to it.
+
+```
+eksctl create iamserviceaccount \
+    --name ebs-csi-controller-sa \
+    --namespace kube-system \
+    --cluster demo-cluster-eks-robot-shop \
+    --role-name AmazonEKS_EBS_CSI_DriverRole \
+    --role-only \
+    --attach-policy-arn arn:aws:iam::aws:policy/service-role/AmazonEBSCSIDriverPolicy \
+    --approve
+```
+Add CSI driver addon
+
+```
+eksctl create addon --name aws-ebs-csi-driver --cluster demo-cluster-eks-robot-shop --service-account-role-arn arn:aws:iam::381492102337:role/AmazonEKS_EBS_CSI_DriverRole --force
+```
+
+
+
+
 
 
 
