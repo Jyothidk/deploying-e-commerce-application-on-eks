@@ -1,6 +1,6 @@
 # Deploying E Commerce Robotshop application on EKS cluster
 
-Robot shop is a sample popular Microservices application. It is owned by Instana which is acquired by IBM. They use this project in their product developments like instana APM tool and other products. 
+Robot shop is a sample popular Microservices application. It is owned by [Instana] (https://github.com/instana/robot-shop) which is acquired by IBM. They use this project in their product developments like instana APM tool and other products. 
 
 Prerequisites: Install kubectl, eksctl and aws cli and configure it on your system.
 
